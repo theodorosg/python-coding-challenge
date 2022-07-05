@@ -82,7 +82,7 @@ test/test_main.py ...                                                    [100%]
 
 ## Task
 
-After the coding challenge is does please
+After the coding challenge is done please
 
 - add a new commit
 - push it to your repository
