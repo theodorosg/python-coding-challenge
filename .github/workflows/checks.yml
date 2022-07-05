@@ -1,0 +1,29 @@
+name: Quick Checks
+
+on: [push]
+
+jobs:
+  unit-tests:
+    name: "Unit Tests"
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup
+        run: make docker-build-from-scratch
+
+      - name: Start container
+        run: make docker-up
+
+      - name: Test
+        run: make python FILE=main.py
+
+      - name: list
+        run: make pip-install
+
+      - name: Verify setup
+        run: make verify-setup
+
+      - name: Run Tests
+        run: make run-tests
